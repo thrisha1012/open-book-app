@@ -6,7 +6,7 @@ const Main=()=>{
     const[bookData,setData]=useState([]);
     const searchBook=(evt)=>{
         if(evt.key==="Enter"){
-            axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyCM4ZQYDg5mj04tPqyfccLpHsDfE5EtRts')
+            axios.get('https://www.googleapis.com/books/v1/volumes?q='+search+'&key=AIzaSyCM4ZQYDg5mj04tPqyfccLpHsDfE5EtRts'+'&maxResults=40')
             .then(res=>setData(res.data.items))
             .catch(err=>console.log(err))
         }
